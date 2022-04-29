@@ -53,7 +53,7 @@
                 </div>
                 @if($role == "admin")
                 <div class="menu-item py-2">
-                    <a class="menu-link {{request()->is('admin/student') ? 'active' : ''}} menu-center" href="{{ $student }}" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
+                    <a class="menu-link {{request()->is('admin/student') ? 'active' : ''}} menu-center" href="{{ route('admin.student.index') }}" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
                         <span class="menu-icon me-0">
                             <i class="fas fa-light fa-users"></i>
                             {{-- <i class="fas fa-envelope-open-tex"></i> --}}
