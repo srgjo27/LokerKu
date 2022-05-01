@@ -1,4 +1,4 @@
-<x-app-layout title="Dashboard">
+<x-app-layout title="Home">
     <div class="post d-flex flex-column-fluid" id="kt_post">
         <!--begin::Container-->
         <div id="kt_content_container" class="container-xxl">
@@ -136,10 +136,10 @@
                                             <!--begin::Stats-->
                                             <div class="m-0">
                                                 <!--begin::Number-->
-                                                <span class="text-gray-700 fw-boldest d-block fs-2qx lh-1 ls-n1 mb-1">37</span>
+                                                <span class="text-gray-700 fw-boldest d-block fs-2qx lh-1 ls-n1 mb-1">427</span>
                                                 <!--end::Number-->
                                                 <!--begin::Desc-->
-                                                <span class="text-gray-500 fw-bold fs-6">Courses</span>
+                                                <span class="text-gray-500 fw-bold fs-6">batch 2021</span>
                                                 <!--end::Desc-->
                                             </div>
                                             <!--end::Stats-->
@@ -168,10 +168,10 @@
                                             <!--begin::Stats-->
                                             <div class="m-0">
                                                 <!--begin::Number-->
-                                                <span class="text-gray-700 fw-boldest d-block fs-2qx lh-1 ls-n1 mb-1">6</span>
+                                                <span class="text-gray-700 fw-boldest d-block fs-2qx lh-1 ls-n1 mb-1">386</span>
                                                 <!--end::Number-->
                                                 <!--begin::Desc-->
-                                                <span class="text-gray-500 fw-bold fs-6">Certificates</span>
+                                                <span class="text-gray-500 fw-bold fs-6">batch 2020</span>
                                                 <!--end::Desc-->
                                             </div>
                                             <!--end::Stats-->
@@ -200,10 +200,10 @@
                                             <!--begin::Stats-->
                                             <div class="m-0">
                                                 <!--begin::Number-->
-                                                <span class="text-gray-700 fw-boldest d-block fs-2qx lh-1 ls-n1 mb-1">4,7</span>
+                                                <span class="text-gray-700 fw-boldest d-block fs-2qx lh-1 ls-n1 mb-1">357</span>
                                                 <!--end::Number-->
                                                 <!--begin::Desc-->
-                                                <span class="text-gray-500 fw-bold fs-6">Avg. Score</span>
+                                                <span class="text-gray-500 fw-bold fs-6">batch 2019</span>
                                                 <!--end::Desc-->
                                             </div>
                                             <!--end::Stats-->
@@ -232,10 +232,10 @@
                                             <!--begin::Stats-->
                                             <div class="m-0">
                                                 <!--begin::Number-->
-                                                <span class="text-gray-700 fw-boldest d-block fs-2qx lh-1 ls-n1 mb-1">822</span>
+                                                <span class="text-gray-700 fw-boldest d-block fs-2qx lh-1 ls-n1 mb-1">113</span>
                                                 <!--end::Number-->
                                                 <!--begin::Desc-->
-                                                <span class="text-gray-500 fw-bold fs-6">Hours Learned</span>
+                                                <span class="text-gray-500 fw-bold fs-6">batch 2018</span>
                                                 <!--end::Desc-->
                                             </div>
                                             <!--end::Stats-->
@@ -254,27 +254,46 @@
                 </div>
                 <div class="col-xl-8 mb-5 mb-xl-10">
                     <!--begin::Engage widget 4-->
-                    <div class="card" style="background-color: #1C325E;">
+                    <div class="card" style="background-color: #4B7BE5;">
                         <!--begin::Body-->
                         <div class="card-body d-flex ps-xl-15">
                             <!--begin::Wrapper-->
                             <div class="m-0">
                                 <!--begin::Title-->
                                 <div class="position-relative fs-2x z-index-2 fw-bolder text-white mb-7">
-                                <span class="me-2">You have got 
+                                <span style="text-align:center;"class="me-2">Selamat Datang di Website LokerKu !
                                 <span class="position-relative d-inline-block text-danger">
-                                    <a href="../pages/user-profile/overview.html" class="text-danger opacity-75-hover">2300 bonus</a>
                                     <!--begin::Separator-->
                                     <span class="position-absolute opacity-50 bottom-0 start-0 border-4 border-danger border-bottom w-100"></span>
                                     <!--end::Separator-->
-                                </span></span>points.
-                                <br>Feel free to use them in your lessons</div>
+                                </span></span>
+                                <br></div>
                                 <!--end::Title-->
                                 <!--begin::Action-->
-                                <div class="mb-3">
-                                    <a href="#" class="btn btn-danger fw-bold me-2" data-bs-toggle="modal" data-bs-target="#kt_modal_upgrade_plan">Get Reward</a>
-                                    <a href="../apps/support-center/overview.html" class="btn btn-color-white bg-body bg-opacity-15 bg-hover-opacity-25 fw-bold">How to</a>
-                                </div>
+                                <!--begin::Action-->
+                            </div>
+                            <!--begin::Wrapper-->
+                            <!--begin::Illustration-->
+                            <img src="../assets/media/illustrations/sigma-1/17-dark.png" class="position-absolute me-3 bottom-0 end-0 h-200px" alt="">
+                            <!--end::Illustration-->
+                        </div>
+                        <!--end::Body-->
+                    </div><br>
+                    <div class="card" style="background-color: #4B7BE5;">
+                        <!--begin::Body-->
+                        <div class="card-body d-flex ps-xl-15">
+                            <!--begin::Wrapper-->
+                            <div class="m-0">
+                                <!--begin::Title-->
+                                <div class="position-relative fs-2x z-index-2 fw-bolder text-white mb-7">
+                                <span class="position-relative d-inline-block text-danger">
+                                    <!--begin::Separator-->
+                                    <span class="position-absolute opacity-50 bottom-0 start-0 border-4 border-danger border-bottom w-100"></span>
+                                    <!--end::Separator-->
+                                </span>
+                                <h3>disini gambar</h3>
+                                <!--end::Title-->
+                                <!--begin::Action-->
                                 <!--begin::Action-->
                             </div>
                             <!--begin::Wrapper-->
