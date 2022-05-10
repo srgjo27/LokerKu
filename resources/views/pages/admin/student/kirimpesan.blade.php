@@ -1,30 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>T</title>
-</head>
-<body>
-    <body>
-
-        <form action="" method="post">
-    
-            <div class="row">  
-                <div class="col-sm-3"></div>
-                <div class="col-sm-6">    
+<x-app-layout title="Mahasiswa">
+    <div id="kt_content_container" class="container-xxl">
+        <div class="card card-custom">
+            <div class="card-body" style="line-height: 4em;">
+                <form action="" method="POST">
+                    @csrf
                     <div class="form-group">
-    
-                        <p>Deskripsi Barang</p>
-                        <textarea name="keterangan" class="form-control" cols="200" rows="5"></textarea>
-                    </div>    
-                    <br>
-                  <center><input type="button" value="Kirim Pesan" class="btn btn-primary"></center>
-                </div>
+                        <label for="deskripsi">Deskripsi</label>
+                        <textarea class="form-control" id="deskripsi" name="deskripsi" rows="5" placeholder="Deskripsi"></textarea>
+                    </div>
+                    <div class="form-group" style="float: right;">
+                        <a href="#" class="btn btn-primary" onclick="kirimPesan()">
+                            <i class="fa fa-paper-plane"></i> Kirim Pesan
+                        </a>
+                    </div>
+                </form>
             </div>
-        </form>
-    </body>
-    </html> 
-</body>
-</html>
+        </div>
+    </div>
+</x-app-layout>

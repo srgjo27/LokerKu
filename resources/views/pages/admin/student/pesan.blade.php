@@ -1,21 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Form Pesan</title>
-</head>
-<style>
-    h3{
-        padding-top: 70px;
-    }
-</style>
-<body>
-    <center>
-        <h3>Pesan</h3>
-        <textarea name="komentar" cols="100" rows="20" placeholder="Isi pesan anda"></textarea>
-        <br><br><input type="submit" value="Kirim">
-    </center>
-</body>
-</html>
+<x-app-layout title="Mahasiswa">
+    <div id="kt_content_container" class="container-xxl">
+        <div class="card card-custom text-center">
+            <div class="card-body" style="line-height: 4em;">
+                <form action="" method="POST">
+                    @csrf
+                    <div class="form-group">
+                        <label for="deskripsi">Pesan</label>
+                        <textarea class="form-control" id="deskripsi" name="deskripsi" rows="5" placeholder="Tuliskan pesan..."></textarea>
+                    </div><br>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary btn-icon-sm">
+                            <span class="btn-inner--icon"><i class="fas fa-paper-plane"></i></span>
+                            <span class="btn-inner--text">Kirim</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</x-app-layout>

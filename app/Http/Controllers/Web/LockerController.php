@@ -25,7 +25,7 @@ class LockerController extends Controller
      */
     public function create()
     {
-        //
+        return view('pages.web.locker.input');
     }
 
     /**
