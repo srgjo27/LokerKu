@@ -6,7 +6,7 @@
                     <div class="row">
                         <div class="col-md-12 p-2 m-5">
                             <div class="float-end">
-                                <button class="btn btn-success" type="submit">Mengenerate</button>
+                                <a class="btn btn-success" type="submit" href="{{ route ('admin.generate.index') }}">Mengenerate</a>
                             </div>
                         </div>
                         <div class="col-md-12 bg-body p-2 m-5">
@@ -19,7 +19,7 @@
                                 <div class="col-md-3">
                                     <div class="d-flex">
                                         <input class="form-control" type="date">
-                                        <button class="btn btn-outline-success" type="submit">Tampilkan</button>
+                                        <a class="btn btn-outline-success" type="submit" href="{{ route ('admin.kirimpesan.index') }}">Tampilkan</a>
                                     </div>
                                 </div>
                             </form>

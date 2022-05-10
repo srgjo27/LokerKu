@@ -51,17 +51,17 @@
                         <span class="menu-title">Locker</span>
                     </a>
                 </div>
-                @if($role == "admin")
-                <div class="menu-item py-2">
+                {{-- @if($role == "admin") --}}
+                {{-- <div class="menu-item py-2">
                     <a class="menu-link {{request()->is('admin/student') ? 'active' : ''}} menu-center" href="{{ route('admin.student.index') }}" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
                         <span class="menu-icon me-0">
-                            <i class="fas fa-light fa-users"></i>
+                            <i class="fas fa-light fa-users"></i> --}}
                             {{-- <i class="fas fa-envelope-open-tex"></i> --}}
-                        </span>
+                        {{-- </span>
                         <span class="menu-title">Mahasiswa</span>
                     </a>
-                </div>
-                @endif
+                </div> --}}
+                {{-- @endif --}}
                 <!--end::Menu item-->
             </div>
             <!--end::Menu 2-->

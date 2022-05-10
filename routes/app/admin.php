@@ -5,6 +5,8 @@ use App\Http\Controllers\Admin\AuthController;
 use App\Http\Controllers\Admin\LockerController;
 use App\Http\Controllers\Admin\StudentController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\GenerateController;
+use App\Http\Controllers\Admin\KirimPesanController;
 
 Route::group(['domain' => ''], function () {
     Route::redirect('admin', 'admin/dashboard', 301);
@@ -19,6 +21,8 @@ Route::group(['domain' => ''], function () {
             Route::resource('locker', LockerController::class);
             Route::resource('student', StudentController::class);
             Route::get('logout', [AuthController::class, 'do_logout'])->name('auth.logout');
+            Route::get('mengenerate', [GenerateController::class, 'index'])->name('generate.index');
+            Route::get('kirimpesan', [KirimPesanController::class, 'index'])->name('kirimpesan.index');
         });
     });
 });
