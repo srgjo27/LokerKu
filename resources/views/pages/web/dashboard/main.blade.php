@@ -261,7 +261,7 @@
                             <div class="m-0">
                                 <!--begin::Title-->
                                 <div class="position-relative fs-2x z-index-2 fw-bolder text-white mb-7">
-                                <span style="text-align:center;"class="me-2">Selamat Datang di Website LokerKu !
+                                <span style="text-align:center;"class="me-2">Selamat Datang di Website LokerKu!
                                 <span class="position-relative d-inline-block text-danger">
                                     <!--begin::Separator-->
                                     <span class="position-absolute opacity-50 bottom-0 start-0 border-4 border-danger border-bottom w-100"></span>
@@ -279,6 +279,7 @@
                         </div>
                         <!--end::Body-->
                     </div><br>
+                    <h2>Pemberitahuan :</h2>
                     <div class="card" style="background-color: #4B7BE5;">
                         <!--begin::Body-->
                         <div class="card-body d-flex ps-xl-15">
@@ -291,7 +292,7 @@
                                     <span class="position-absolute opacity-50 bottom-0 start-0 border-4 border-danger border-bottom w-100"></span>
                                     <!--end::Separator-->
                                 </span>
-                                <h3>disini gambar</h3>
+                                <h2>(!) Pastikan menggunakan foto profil dan data diri yang benar agar keasramaan dapat mengenalimu nantinya.</h2>
                                 <!--end::Title-->
                                 <!--begin::Action-->
                                 <!--begin::Action-->
