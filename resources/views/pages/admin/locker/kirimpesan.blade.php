@@ -9,7 +9,7 @@
                         <textarea class="form-control" id="deskripsi" name="deskripsi" rows="5" placeholder="Deskripsi"></textarea>
                     </div>
                     <div class="form-group" style="float: right;">
-                        <a href="#" class="btn btn-primary" onclick="kirimPesan()">
+                        <a href="{{ route ('admin.pesan.index') }}" class="btn btn-primary" onclick="kirimPesan()">
                             <i class="fa fa-paper-plane"></i> Kirim Pesan
                         </a>
                     </div>
