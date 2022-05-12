@@ -16,6 +16,7 @@ Route::group(['domain' => ''], function () {
             Route::redirect('/', 'dashboard', 301);
             Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
             Route::resource('locker', LockerController::class);
+            Route::get('logout', [AuthController::class, 'do_logout'])->name('auth.logout');
         });
     });
 });

@@ -25,7 +25,7 @@ Route::group(['domain' => ''], function () {
             Route::get('mengenerate', [GenerateController::class, 'index'])->name('generate.index');
             Route::get('kirimpesan', [KirimPesanController::class, 'index'])->name('kirimpesan.index');
             Route::get('pesan', [PesanController::class, 'index'])->name('pesan.index');
-            
+            Route::get('logout', [AuthController::class, 'do_logout'])->name('auth.logout');
         });
     });
 });

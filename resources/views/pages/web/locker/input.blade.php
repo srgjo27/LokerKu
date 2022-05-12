@@ -1,35 +1,32 @@
-<x-app-layout title="Locker">
-    <div id="kt_content_container" class="container-xxl">
-        <div class="card card-custom">
-            <div class="card-body" style="line-height: 4em;">
-                <form action="" method="POST">
-                    @csrf
-                    <div>
-                        <div class="form-group">
-                            <label for="deskripsi" class="fs-4">Deskripsi Barang:</label>
-                            <input type="text" class="form-control" name="deskripsi" placeholder="" required>
+<div class="post d-flex flex-column-fluid" id="kt_post">
+    <!--begin::Container-->
+    <div id="" class="container-xxl">
+        <div class="card card-flush shadow-sm">
+            <div class="card-header">
+                <h3 class="card-title fs-3">
+                    Deskripsi Barang
+                </h3>
+            </div>
+            <div class="card-body">
+                <form id="form_input">
+                    <div class="row">
+                        <div class="col-lg-12 mb-5">
+                            <label for="description" class="required form-label">Deskripsi Barang</label>
+                            <textarea class="form-control form-control-lg form-control-solid h-100px" name="description" id="description" placeholder=""></textarea>              
                         </div>
-                        <div class="form-group">
-                            <label for="jumlah" class="fs-4">Jam:</label>
-                            <input type="time" class="form-control" placeholder="" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="jumlah" class="fs-4">Tanggal:</label>
-                            <input type="date" class="form-control" placeholder="" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="file" class="fs-4">File:</label>
-                            <div class="custom-file">
-                                <input type="file" class="custom-file-input" id="file" name="file" required>
-                                <label class="custom-file-label" for="file">Choose file</label>
-                            </div>
+                        <div class="col-lg-12 mb-5">
+                            <label for="file">Pilih File</label>
+                            <input type="file" class="form-control form-control-lg form-control-solid" id="file" name="file">             
                         </div>
                     </div>
-                    <div class="form-group text-center">
-                        <button type="submit" class="btn btn-primary">Tambahkan</button>
+                    <div class="row">
+                        <div class="min-w-150px mt-10 text-end">
+                            <button id="tombol_simpan" onclick="handle_upload('#tombol_simpan','#form_input','{{route('web.locker.store')}}','POST');" class="btn btn-sm btn-primary">Save</button>
+                        </div>
                     </div>
                 </form>
             </div>
         </div>
     </div>
-</x-app-layout>
+<!--end::Container-->
+</div>

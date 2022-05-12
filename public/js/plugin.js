@@ -26,10 +26,10 @@ toastr.options = {
     "hideMethod": "fadeOut"
 };
 function success_toastr(pesan){
-    toastr.success(pesan, "Klinik del");
+    toastr.success(pesan, "LokerKU");
 }
 function error_toastr(pesan){
-    toastr.error(pesan, "Klinik del");
+    toastr.error(pesan, "LokerKu");
 }
 function obj_autosize(obj){
     autosize($('#' + obj));
