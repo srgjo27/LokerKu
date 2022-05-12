@@ -48,7 +48,7 @@
             <!--begin::Card footer-->
             <div class="card-footer flex-wrap pt-0">
                 <a href="javascript:;" onclick="load_detail('{{route('web.locker.show',$item->id)}}');" class="menu-link px-3"><i class="fa fa-eye text-primary"></i>View</a>
-                <a href="javascript:;" onclick="load_inpput('{{route('web.locker.edit',$item->id)}}');" class="menu-link px-3"><i class="fa fa-edit text-warning"></i>Edit</a>
+                <a href="javascript:;" onclick="load_input('{{route('web.locker.edit',$item->id)}}');" class="menu-link px-3"><i class="fa fa-edit text-warning"></i>Edit</a>
                 <a href="javascript:;" onclick="handle_confirm('Apakah Anda Yakin?','Yakin','Tidak','DELETE','{{route('web.locker.destroy',$item->id)}}');" class="menu-link px-3"><i class="fa fa-trash text-danger"></i>Delete</a>
             </div>
             <!--end::Card footer-->

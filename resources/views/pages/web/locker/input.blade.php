@@ -21,7 +21,11 @@
                     </div>
                     <div class="row">
                         <div class="min-w-150px mt-10 text-end">
+                            @if ($locker->id)
+                            <button id="tombol_simpan" onclick="handle_upload('#tombol_simpan','#form_input','{{route('web.locker.update',$locker->id)}}','PATCH');" class="btn btn-sm btn-primary">Save</button>
+                            @else
                             <button id="tombol_simpan" onclick="handle_upload('#tombol_simpan','#form_input','{{route('web.locker.store')}}','POST');" class="btn btn-sm btn-primary">Save</button>
+                            @endif
                         </div>
                     </div>
                 </form>

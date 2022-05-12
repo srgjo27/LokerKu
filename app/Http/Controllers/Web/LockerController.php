@@ -34,7 +34,7 @@ class LockerController extends Controller
      */
     public function create()
     {
-        return view('pages.web.locker.input');
+        return view('pages.web.locker.input', ['locker' => new Locker]);
     }
 
     /**
@@ -84,7 +84,7 @@ class LockerController extends Controller
      */
     public function show(Locker $locker)
     {
-        //
+        return view('pages.web.locker.show', compact('locker'));
     }
 
     /**
@@ -95,7 +95,7 @@ class LockerController extends Controller
      */
     public function edit(Locker $locker)
     {
-        //
+        return view('pages.web.locker.input', compact('locker'));
     }
 
     /**
