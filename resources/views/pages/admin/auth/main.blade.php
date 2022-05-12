@@ -7,9 +7,7 @@
 				<!--begin::Heading-->
 				<div class="text-center mb-10">
 					<!--begin::Title-->
-					<h1 class="text-dark mb-3">Masuk ke {{config('app.name')}}</h1>
-					<div class="text-gray-400 fw-bold fs-4">Belum Memiliki Akun?
-					<a href="javascript:;" onclick="auth_content('page_register');" class="link-primary fw-bolder">Buat Akun</a></div>
+					<h1 class="text-dark mb-3">Sign In LokerKu</h1>
 					<!--end::Link-->
 				</div>
 				<!--begin::Heading-->

@@ -87,7 +87,7 @@
                     <div class="col-lg-12 mb-5">
                         <div class="d-flex flex-column text-gray-600">
                             <div class="d-flex align-items-center py-2">
-                            <span class="bullet bg-primary me-3"></span>XXX</div>
+                            <span class="bullet bg-primary me-3"></span></div>
                         </div>               
                     </div>
                 </div>
