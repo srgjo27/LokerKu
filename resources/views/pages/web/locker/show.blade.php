@@ -13,12 +13,12 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col-lg-12 mb-5">
-                        {{ $locker->created_at-- . ' | ' . $locker->updated_at-- }}
+                        {{ $locker->created_at . ' | ' . $locker->updated_at }}
                         <p class="form-control-static">{{ $locker->description }}</p>             
                     </div>
                     <div class="col-lg-12">
                         @if ($locker->file)
-                            <a href="{{asset('announcements/'.$locker->file)}}" target="_blank">{{$locker->file}}</a>
+                            <a href="{{asset('storage/lockers/'.$locker->file)}}" target="_blank">{{$locker->file}}</a>
                         @else
                             <!--begin::Notice-->
                             <div class="notice d-flex bg-light-warning rounded border-warning border border-dashed p-6">

@@ -32,23 +32,22 @@ class AuthController extends Controller
                     'alert' => 'error',
                     'message' => $errors->first('username'),
                 ]);
-            }else{
+            } else {
                 return response()->json([
                     'alert' => 'error',
                     'message' => $errors->first('password'),
                 ]);
             }
         }
-        $user = User::where('username', $request->username)->first();
-        if ($user){
-            if(Auth::guard('web')->attempt(['username' => $request->username, 'password' => $request->password], $request->remember))
-            {
+        $user = User::where('username', $request->username)->where('role', '=', 'user')->first();
+        if ($user) {
+            if (Auth::guard('web')->attempt(['username' => $request->username, 'password' => $request->password], $request->remember)) {
                 return response()->json([
                     'alert' => 'success',
-                    'message' => 'Welcome back '. Auth::guard('web')->user()->name,
+                    'message' => 'Welcome back ' . Auth::guard('web')->user()->name,
                     'callback' => 'reload',
                 ]);
-            }else{
+            } else {
                 return response()->json([
                     'alert' => 'error',
                     'message' => 'Maaf, password anda salah.',
@@ -60,7 +59,6 @@ class AuthController extends Controller
                 'message' => 'Maaf, Akun belum terdaftar.',
             ]);
         }
-        
     }
     public function do_register(Request $request)
     {
@@ -71,7 +69,7 @@ class AuthController extends Controller
             'password' => 'required|min:8',
             'phone' => 'required|max:13|unique:users',
         ]);
-        
+
         if ($validator->fails()) {
             $errors = $validator->errors();
             if ($errors->has('name')) {
@@ -79,22 +77,22 @@ class AuthController extends Controller
                     'alert' => 'error',
                     'message' => $errors->first('name'),
                 ]);
-            }elseif ($errors->has('username')) {
+            } elseif ($errors->has('username')) {
                 return response()->json([
                     'alert' => 'error',
                     'message' => $errors->first('username'),
                 ]);
-            }elseif ($errors->has('email')) {
+            } elseif ($errors->has('email')) {
                 return response()->json([
                     'alert' => 'error',
                     'message' => $errors->first('email'),
                 ]);
-            }elseif ($errors->has('password')) {
+            } elseif ($errors->has('password')) {
                 return response()->json([
                     'alert' => 'error',
                     'message' => $errors->first('password'),
                 ]);
-            }elseif ($errors->has('phone')) {
+            } elseif ($errors->has('phone')) {
                 return response()->json([
                     'alert' => 'error',
                     'message' => $errors->first('phone'),

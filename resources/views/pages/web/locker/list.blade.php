@@ -35,7 +35,7 @@
             <!--begin::Card body-->
             <div class="card-body pt-1">
                 <!--begin::Users-->
-                <div class="fw-bolder text-gray-600 mb-5">{{ $item->created_at--  . ' | ' . $item->updated_at--  }}</div>
+                <div class="fw-bolder text-gray-600 mb-5">{{ $item->created_at  . ' | ' . $item->updated_at  }}</div>
                 <!--end::Users-->
                 <!--begin::Permissions-->
                 <div class="d-flex flex-column text-gray-600">

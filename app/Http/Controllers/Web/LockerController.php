@@ -22,7 +22,7 @@ class LockerController extends Controller
             $weekStartDate = $now->startOfWeek()->format('Y-m-d H:i');
             $weekEndDate = $now->endOfWeek()->format('Y-m-d H:i');
             $lockers = Locker::whereBetween('created_at', [$weekStartDate, $weekEndDate])->get();
-            return view('pages.web.locker.list', compact('lockers'));
+            return view('pages.web.locker.list', ['lockers' => $lockers]);
         }
         return view('pages.web.locker.main');
     }
