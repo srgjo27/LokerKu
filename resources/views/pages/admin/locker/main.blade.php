@@ -18,7 +18,13 @@
                                 </div>
                                 <div class="col-md-3">
                                     <div class="d-flex">
-                                        <input class="form-control" type="date">
+                                        <select class="form-select" aria-label="Default select example">
+                                            <option selected>Asrama</option>
+                                            <option value="1">Pniel</option>
+                                            <option value="2">Kafernaum</option>
+                                            <option value="3">Silo</option>
+                                            <option value="3">Rusun IV</option>
+                                          </select>
                                         <a class="btn btn-outline-success" type="submit" href="{{ route ('admin.kirimpesan.index') }}">Tampilkan</a>
                                     </div>
                                 </div>
