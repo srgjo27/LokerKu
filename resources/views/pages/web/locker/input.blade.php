@@ -4,18 +4,28 @@
         <div class="card card-flush shadow-sm">
             <div class="card-header">
                 <h3 class="card-title fs-3">
-                    Deskripsi Barang
+                    @if($locker->id)
+                        Edit
+                    @else
+                        New 
+                    @endif
+                        Item
                 </h3>
+                <div class="card-toolbar">
+                    <a href="{{ route('web.locker.index') }}" class="btn btn-icon btn-sm btn-active-light-primary ms-2">
+                        <i class="fa fa-times"></i>
+                    </a>
+                </div>
             </div>
             <div class="card-body">
                 <form id="form_input">
                     <div class="row">
                         <div class="col-lg-12 mb-5">
-                            <label for="description" class="required form-label">Deskripsi Barang</label>
-                            <textarea class="form-control form-control-lg form-control-solid h-100px" name="description" id="description" placeholder=""></textarea>              
+                            <label for="name" class="required form-label">Nama Barang</label>
+                            <input type="text" class="form-control" id="name" name="name" placeholder="Nama barang" value="{{ $locker->name }}">             
                         </div>
                         <div class="col-lg-12 mb-5">
-                            <label for="file">Pilih File</label>
+                            <label for="file">Choose File</label>
                             <input type="file" class="form-control form-control-lg form-control-solid" id="file" name="file">             
                         </div>
                     </div>

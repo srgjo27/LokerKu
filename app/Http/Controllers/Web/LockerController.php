@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Web;
 
 use Carbon\Carbon;
 use App\Models\Locker;
+use App\Models\History;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
@@ -18,10 +19,12 @@ class LockerController extends Controller
     public function index(Request $request)
     {
         if ($request->ajax()) {
-            $now = Carbon::now();
-            $weekStartDate = $now->startOfWeek()->format('Y-m-d H:i');
-            $weekEndDate = $now->endOfWeek()->format('Y-m-d H:i');
-            $lockers = Locker::whereBetween('created_at', [$weekStartDate, $weekEndDate])->get();
+            // $now = Carbon::now();
+            // $weekStartDate = $now->startOfWeek()->format('Y-m-d H:i');
+            // $weekEndDate = $now->endOfWeek()->format('Y-m-d H:i');
+            // $lockers = Locker::whereBetween('created_at', [$weekStartDate, $weekEndDate])->get();
+            // $lockers = Locker::orderBy('created_at', 'desc')->paginate(8);
+            $lockers = Locker::orderBy('created_at', 'desc')->paginate(8);
             return view('pages.web.locker.list', ['lockers' => $lockers]);
         }
         return view('pages.web.locker.main');
@@ -46,15 +49,15 @@ class LockerController extends Controller
     public function store(Request $request)
     {
         $validators = Validator::make($request->all(), [
-            'description' => 'required'
+            'name' => 'required',
         ]);
 
         if ($validators->fails()) {
             $errors = $validators->errors();
-            if ($errors->has('description')) {
+            if ($errors->has('name')) {
                 return response()->json([
                     'alert' => 'error',
-                    'message' => $errors->first('description')
+                    'message' => $errors->first('name')
                 ]);
             }
         }
@@ -67,12 +70,12 @@ class LockerController extends Controller
         }
 
         $locker->user_id = auth()->user()->id;
-        $locker->description = $request->description;
+        $locker->name = $request->name;
         $locker->save();
 
         return response()->json([
             'alert' => 'success',
-            'message' => 'Daftar barang berhasil ditambahkan'
+            'message' => 'Barang berhasil ditambahkan'
         ]);
     }
 
@@ -108,15 +111,15 @@ class LockerController extends Controller
     public function update(Request $request, Locker $locker)
     {
         $validators = Validator::make($request->all(), [
-            'description' => 'required',
+            'name' => 'required',
         ]);
 
         if ($validators->fails()) {
             $errors = $validators->errors();
-            if ($errors->has('description')) {
+            if ($errors->has('name')) {
                 return response()->json([
                     'alert' => 'error',
-                    'message' => $errors->first('description')
+                    'message' => $errors->first('name')
                 ]);
             }
         }
@@ -127,7 +130,7 @@ class LockerController extends Controller
         }
 
         $locker->user_id = auth()->user()->id;
-        $locker->description = $request->description;
+        $locker->name = $request->name;
         $locker->update();
 
         return response()->json([
@@ -144,14 +147,26 @@ class LockerController extends Controller
      */
     public function destroy(Locker $locker)
     {
-        $file = public_path('storage/lockers/' . $locker->file);
-        if (file_exists($file)) {
-            unlink($file);
-        }
+        // $file = public_path('storage/lockers/' . $locker->file);
+        // if (file_exists($file)) {
+        //     unlink($file);
+        // }
         $locker->delete();
         return response()->json([
             'alert' => 'success',
             'message' => 'Daftar barang berhasil dihapus',
+        ]);
+    }
+
+    public function status($id)
+    {
+        $request = Locker::find($id);
+        $request->status = 'taken';
+        $request->save();
+
+        return response()->json([
+            'alert' => 'success',
+            'message' => 'Barang berhasil di ambil',
         ]);
     }
 }
