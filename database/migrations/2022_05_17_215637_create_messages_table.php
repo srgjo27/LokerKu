@@ -1,11 +1,10 @@
 <?php
 
-use App\Models\User;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateLockersTable extends Migration
+class CreateMessagesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,12 +13,10 @@ class CreateLockersTable extends Migration
      */
     public function up()
     {
-        Schema::create('lockers', function (Blueprint $table) {
+        Schema::create('messages', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(User::class);
-            $table->text('name');
-            $table->string('file')->nullable();
-            $table->enum('status', ['reserved', 'taken'])->default('reserved');
+            $table->foreignId('user_id');
+            $table->text('message');
             $table->timestamps();
             $table->foreign('user_id')->references('id')->on('users');
         });
@@ -32,6 +29,6 @@ class CreateLockersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('lockers');
+        Schema::dropIfExists('messages');
     }
 }
