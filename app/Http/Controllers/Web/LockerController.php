@@ -4,9 +4,9 @@ namespace App\Http\Controllers\Web;
 
 use Carbon\Carbon;
 use App\Models\Locker;
-use App\Models\History;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 
 class LockerController extends Controller
@@ -19,11 +19,17 @@ class LockerController extends Controller
     public function index(Request $request)
     {
         if ($request->ajax()) {
+            // dd($request->all());
             // $now = Carbon::now();
             // $weekStartDate = $now->startOfWeek()->format('Y-m-d H:i');
             // $weekEndDate = $now->endOfWeek()->format('Y-m-d H:i');
             // $lockers = Locker::whereBetween('created_at', [$weekStartDate, $weekEndDate])->get();
-            $lockers = Locker::orderBy('created_at', 'desc')->paginate(8);
+            $keywords = $request->get('keywords');
+            if ($keywords == 'taken' || $keywords == 'reserved') {
+                $lockers = Locker::where('status', $keywords)->where('user_id', Auth::guard('web')->user()->id)->orderBy('created_at', 'desc')->paginate(8);
+            } else {
+                $lockers = Locker::where('user_id', Auth::guard('web')->user()->id)->where('name', 'like', '%' . $keywords . '%')->orderBy('created_at', 'desc')->paginate(8);
+            }
             return view('pages.web.locker.list', ['lockers' => $lockers]);
         }
         return view('pages.web.locker.main');
