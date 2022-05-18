@@ -72,3 +72,5 @@
     <!--end::Card-->
 </div>
 @endforeach
+
+{{ $lockers->links('theme.app.pagination') }}
