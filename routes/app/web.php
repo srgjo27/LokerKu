@@ -3,7 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Web\AuthController;
 use App\Http\Controllers\Web\LockerController;
-use App\Http\Controllers\Web\HistoryController;
+use App\Http\Controllers\Web\MessageController;
+use App\Http\Controllers\Web\ProfileController;
 use App\Http\Controllers\Web\DashboardController;
 
 Route::group(['domain' => ''], function () {
@@ -15,6 +16,7 @@ Route::group(['domain' => ''], function () {
         });
         Route::middleware(['auth:web'])->group(function () {
             Route::redirect('/', 'dashboard', 301);
+            Route::resource('profile', ProfileController::class);
             Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
             //Route::resource('locker', LockerController::class);
             Route::get('locker', [LockerController::class, 'index'])->name('locker.index');
@@ -25,6 +27,7 @@ Route::group(['domain' => ''], function () {
             Route::patch('locker/{locker}', [LockerController::class, 'update'])->name('locker.update');
             Route::delete('locker/{locker}', [LockerController::class, 'destroy'])->name('locker.destroy');
             Route::patch('locker/{locker}/status', [LockerController::class, 'status'])->name('locker.status');
+            Route::resource('message', MessageController::class);
             Route::get('logout', [AuthController::class, 'do_logout'])->name('auth.logout');
         });
     });

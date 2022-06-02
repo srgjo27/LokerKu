@@ -34,7 +34,6 @@
                 <!--end::Menu wrapper-->
             </div>
             <!--end::Navbar-->
-            <!--begin::Topbar-->
             <div class="d-flex align-items-stretch flex-shrink-0">
                 <!--begin::Toolbar wrapper-->
                 <div class="d-flex align-items-stretch flex-shrink-0">
@@ -54,7 +53,11 @@
                                 <div class="menu-content d-flex align-items-center px-3">
                                     <!--begin::Avatar-->
                                     <div class="symbol symbol-50px me-5">
-                                        <i class="fa fa-user"></i>
+                                        @if (Auth::user()->image)
+                                            <img alt="{{ Auth::user()->name }}" src="{{ asset('public/profiles/'.Auth::user()->image) }}" class="symbol-lg-100">
+                                        @else
+                                            <i class="fa fa-user"></i>
+                                        @endif
                                     </div>
                                     <!--end::Avatar-->
                                     <!--begin::Username-->
@@ -71,9 +74,13 @@
                             <div class="separator my-2"></div>
                             <!--end::Menu separator-->
                             <!--begin::Menu item-->
-                            {{-- <div class="menu-item px-5">
-                                <a href="account/overview.html" class="menu-link px-5">My Profile</a>
-                            </div> --}}
+                            @if(Auth::user()->role == 'user')
+                                <div class="menu-item px-5">
+                                    <a href="{{ route('web.profile.index') }}" class="menu-link">
+                                        <span class="menu-text">My Profile</span>
+                                    </a>
+                                </div>
+                            @endif
                             <!--begin::Menu item-->
                             @php
                             $logout = '';
