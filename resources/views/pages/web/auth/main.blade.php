@@ -16,7 +16,7 @@
 				<!--begin::Input group-->
 				<div class="fv-row mb-10">
 					<!--begin::Label-->
-					<label class="form-label fs-6 fw-bolder text-dark">Username</label>
+					<label class="form-label fs-6 fw-bolder text-dark required">Username</label>
 					<!--end::Label-->
 					<!--begin::Input-->
 	    			<input class="form-control form-control-lg form-control-solid" type="text" name="username" autocomplete="off" />
@@ -28,10 +28,10 @@
 					<!--begin::Wrapper-->
 					<div class="d-flex flex-stack mb-2">
 						<!--begin::Label-->
-						<label class="form-label fw-bolder text-dark fs-6 mb-0">Password</label>
+						<label class="form-label fw-bolder text-dark fs-6 mb-0 required">Password</label>
 						<!--end::Label-->
 						<!--begin::Link-->
-						<a href="javascript:;" onclick="auth_content('page_forgot');" class="link-primary fs-6 fw-bolder">Forgot Password ?</a>
+						{{-- <a href="javascript:;" onclick="auth_content('page_forgot');" class="link-primary fs-6 fw-bolder">Forgot Password ?</a> --}}
 						<!--end::Link-->
 					</div>
 					<!--end::Wrapper-->
@@ -71,22 +71,22 @@
                 </div>
                 <div class="row fv-row mb-7">
                     <!--begin::Col-->
-                    <label class="form-label fw-bolder text-dark fs-6">Nama</label>
+                    <label class="form-label fw-bolder text-dark fs-6 required">Nama</label>
                     <input class="form-control form-control-lg form-control-solid" type="text" placeholder="" name="name" autocomplete="off" />
                     <!--end::Col-->
                 </div>
                 <div class="row fv-row mb-7">
                     <!--begin::Col-->
-                    <label class="form-label fw-bolder text-dark fs-6">Username</label>
+                    <label class="form-label fw-bolder text-dark fs-6 required">Username</label>
                     <input class="form-control form-control-lg form-control-solid" type="text" placeholder="" name="username" autocomplete="off" />
                     <!--end::Col-->
                 </div>
                 <div class="fv-row mb-7">
-                    <label class="form-label fw-bolder text-dark fs-6">Email</label>
+                    <label class="form-label fw-bolder text-dark fs-6 required">Email</label>
                     <input class="form-control form-control-lg form-control-solid" type="email" placeholder="" name="email" autocomplete="off" />
                 </div>
                 <div class="fv-row mb-7">
-                    <label class="form-label fw-bolder text-dark fs-6">No. Phone</label>
+                    <label class="form-label fw-bolder text-dark fs-6 required">No. Phone</label>
                     <input class="form-control form-control-lg form-control-solid" type="text" placeholder="" name="phone" autocomplete="off" />
                 </div>
                 <!--end::Input group-->
@@ -95,7 +95,7 @@
                     <!--begin::Wrapper-->
                     <div class="mb-1">
 
-                        <label class="form-label fw-bolder text-dark fs-6">Password</label>
+                        <label class="form-label fw-bolder text-dark fs-6 required">Password</label>
                         <!--end::Label-->
                         <!--begin::Input wrapper-->
                         <div class="position-relative mb-3">
@@ -134,7 +134,7 @@
             <!--end::Form-->
         </div>
     </div>
-    <div id="page_forgot">
+    {{-- <div id="page_forgot">
         <div class="w-lg-500px bg-body rounded shadow-sm p-10 p-lg-15 mx-auto">
             <!--begin::Form-->
             <form class="form w-100" novalidate="novalidate" id="form_forgot">
@@ -167,7 +167,7 @@
             </form>
             <!--end::Form-->
         </div>
-    </div>
+    </div> --}}
     @section('custom_js')
         <script>
             auth_content('page_login');
